@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	eirinix "github.com/SUSE/eirinix"
+	eirinix "code.cloudfoundry.org/eirinix"
 	annotate "eirinix-annotate/annotate"
 )
 
@@ -15,6 +15,7 @@ func main() {
 		Host:                "0.0.0.0",
 		Port:                4545,
 		ServiceName:         os.Getenv("WEBHOOK_SERVICE_NAME"),
+		OperatorFingerprint: "eirinix-annotation",
 		WebhookNamespace:    os.Getenv("WEBHOOK_NAMESPACE"),
 	}
 	fmt.Printf("--> %#v\n", options)

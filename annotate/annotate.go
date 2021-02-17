@@ -6,7 +6,7 @@ import (
 	"net/http"
         "os"
 
-	eirinix "github.com/SUSE/eirinix"
+	eirinix "code.cloudfoundry.org/eirinix"
 	"go.uber.org/zap"
 	corev1 "k8s.io/api/core/v1"
 	"sigs.k8s.io/controller-runtime/pkg/webhook/admission"
