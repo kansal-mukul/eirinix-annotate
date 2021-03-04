@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-app-2
+  namespace: cfmr-eirini
+  labels:
+    source_type: APP
+spec:
+  containers:
+   - image: busybox:1.28.4
+     command:
+      - sleep
+      - "3600"
+     name: sample-app-2
+  restartPolicy: Always

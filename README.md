@@ -5,6 +5,19 @@ Eirini is an extension for Cloud Foundry that runs applications as statefulsets/
 ## Usage
 In this project we have a mutating webhook that adds set of annotations to the each eirini pod when an app is deployed using cf push in concerned namespace.
 
+Build image from repo:
+
+```shell script
+# Clone repo and cd into it then...
+docker build --no-cache --tag hclcnlabs/eirinix-annotate:1.0.0 .
+```
+
+```shell script
+# Push the image to dockerhub(hclcnlabs)...
+docker push hclcnlabs/eirinix-annotate:1.0.0
+```
+
+
 
 ## Installation Steps
 
@@ -23,12 +36,12 @@ Our mutating webhook can be found out using command:
 ```oc get mutatingwebhookconfigurations```
 
 To deploy our test app into cfmr-eirini:
-```oc apply -f config/apps/eirini_app.yaml```
+```oc apply -f config/apps/sample-app-1.yaml```
 
 As above, the resulting Pod will be mutated to include a all the annotations through the environment variable.
 
-To clean up the test app:
-```oc apply -f config/apps/eirini_app.yaml```
+To clean up the test app :
+```oc apply -f config/apps/sample-app-1.yaml```
 
 ## Maintainers
 The following are the custodians of this codebase:
